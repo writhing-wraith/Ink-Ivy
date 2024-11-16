@@ -6,6 +6,8 @@
   <title>Dark Academia Blog</title>
   <style>
     /* General Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Parisienne&display=swap');
+
     body {
       font-family: 'Garamond', serif;
       margin: 0;
@@ -13,9 +15,12 @@
       background-color: #2b2a30;
       color: #f5f3ef;
       line-height: 1.6;
+      background-image: url('https://via.placeholder.com/1500x1500'); /* Replace with Victorian wallpaper image */
+      background-repeat: repeat;
     }
     h1, h2, h3 {
       color: #d4af37;
+      font-family: 'Parisienne', cursive;
     }
     a {
       color: #b5a78d;
@@ -26,14 +31,30 @@
     }
     /* Header */
     header {
-      background: url('https://via.placeholder.com/1500x400') no-repeat center center/cover;
+      background: url('https://via.placeholder.com/1500x400/774f38/ffffff?text=Stained+Glass+Effect') no-repeat center center/cover;
       color: #f5f3ef;
       padding: 4rem 1rem;
       text-align: center;
+      position: relative;
+    }
+    header:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adds dimming for ambiance */
     }
     header h1 {
       margin: 0;
-      font-size: 3rem;
+      font-size: 3.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    header p {
+      position: relative;
+      z-index: 1;
     }
     /* Navigation */
     nav {
@@ -45,11 +66,17 @@
     nav a {
       margin: 0 1rem;
     }
+    nav a:hover {
+      text-shadow: 0 0 10px #d4af37;
+    }
     /* Main Content */
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
+      border: 3px solid #d4af37;
+      border-radius: 10px;
+      background: rgba(58, 56, 63, 0.9);
     }
     .book-section {
       display: flex;
@@ -59,9 +86,11 @@
     .book {
       background: #3a383f;
       padding: 1rem;
-      border-radius: 5px;
+      border-radius: 10px;
+      border: 2px solid #d4af37;
       text-align: center;
       width: calc(50% - 1rem);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
     .book img {
       max-width: 100%;
@@ -80,6 +109,17 @@
     @keyframes fadeIn {
       0%, 100% { opacity: 0; }
       50% { opacity: 1; }
+    }
+    /* Candles */
+    .candle {
+      position: fixed;
+      bottom: 10%;
+      right: 5%;
+      width: 50px;
+      height: 100px;
+      background: radial-gradient(circle, #ffdf91, #d4af37 60%);
+      box-shadow: 0 0 20px #ffdf91, 0 0 40px #d4af37;
+      border-radius: 10px;
     }
     /* Footer */
     footer {
@@ -126,6 +166,7 @@
       <p>"Hell is empty and all the devils are here." – William Shakespeare</p>
     </div>
   </div>
+  <div class="candle"></div>
   <footer>
     <p>© 2024 Dark Academia Chronicles | All Rights Reserved</p>
   </footer>
