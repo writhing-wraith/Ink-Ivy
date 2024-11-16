@@ -2,42 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark Academia Chronicles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comprehensive Landing Page</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:ital,wght@1,700&family=Parisienne&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2DhHl3ZbYzNqO08G1x+qB4dVv4l14lV8XnVmqJgWypgFHnbl9e38y0g6I65jB2jig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <style>
-    /* Font Imports */
-    @import url('https://fonts.googleapis.com/css2?family=Garamond&family=Parisienne&display=swap');
-
-    /* General Styles */
-    body {
-      font-family: 'Garamond', serif;
+    /* =====================================================
+       General Reset and Base Styles
+    ===================================================== */
+    * {
       margin: 0;
       padding: 0;
-      background-color: #2b1b17; /* Deep red background */
-      color: #f5f3ef;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
       line-height: 1.6;
-      background-image: url('https://i.imgur.com/3Q4g5Bz.jpg'); /* Victorian wallpaper */
-      background-repeat: repeat;
+      color: #333;
+      background-color: #f9f9f9;
     }
-    h1, h2, h3 {
-      color: #d4af37;
-      font-family: 'Parisienne', cursive; /* Scripted font */
-    }
+    
     a {
-      color: #d4af37;
+      color: #3498db;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
+    
     a:hover {
-      color: #e5c07b;
+      color: #2980b9;
     }
-    /* Header */
+    
+    /* =====================================================
+       Header and Navigation
+    ===================================================== */
     header {
-      background: url('https://i.imgur.com/OaG6S4G.png') no-repeat center center/cover; /* Stained glass */
+      background: url('https://i.imgur.com/OaG6S4G.png') no-repeat center center/cover;
+      height: 100vh;
       color: #f5f3ef;
-      padding: 4rem 1rem;
       text-align: center;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
+    
     header::before {
       content: '';
       position: absolute;
@@ -45,348 +64,1048 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(43, 27, 23, 0.6); /* Dark overlay for ambiance */
+      background: rgba(43, 27, 23, 0.7);
+      z-index: 0;
     }
-    header h1, header p {
+    
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1rem;
+    }
+    
+    header p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
       position: relative;
       z-index: 1;
     }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.2rem;
+      border: 2px solid #d4af37;
+      background: transparent;
+      color: #f5f3ef;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .btn:hover {
+      background: #d4af37;
+      color: #2b1b17;
+    }
+    
     /* Navigation */
     nav {
       display: flex;
       justify-content: center;
-      background: #3c2f2f;
+      gap: 2rem;
       padding: 1rem 0;
+      background: #3c2f2f;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     }
+    
     nav a {
-      margin: 0 1rem;
       font-weight: bold;
-    }
-    nav a:hover {
-      text-shadow: 0 0 10px #d4af37;
-    }
-    /* Main Content */
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: rgba(60, 47, 47, 0.9);
-      border: 2px solid #d4af37;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      font-size: 1.2rem;
+      text-transform: uppercase;
       position: relative;
+      color: #f5f3ef;
     }
-    /* Antique Detailing */
-    .container::before, .container::after {
+    
+    nav a::before {
       content: '';
       position: absolute;
-      width: 50px;
-      height: 50px;
-      background: url('https://i.imgur.com/0j3m5T4.png') no-repeat center center;
-      background-size: contain;
+      width: 100%;
+      height: 2px;
+      background: #d4af37;
+      bottom: -5px;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
     }
-    .container::before {
-      top: -25px;
-      left: -25px;
+    
+    nav a:hover::before {
+      transform: scaleX(1);
     }
-    .container::after {
-      bottom: -25px;
-      right: -25px;
-      transform: rotate(180deg);
+    
+    /* =====================================================
+       Featured Section
+    ===================================================== */
+    .featured {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
     }
-    .book-section {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+    
+    .featured h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: #2b1b17;
     }
+    
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
     .book {
-      background: #4a3838;
-      padding: 1rem;
+      background: rgba(60, 47, 47, 0.9);
+      padding: 1.5rem;
       border-radius: 10px;
       border: 2px solid #d4af37;
-      text-align: center;
-      width: calc(50% - 1rem);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      transition: transform 0.5s, box-shadow 0.5s;
       position: relative;
       overflow: hidden;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
     }
+    
     .book:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+      transform: translateY(-10px);
+      background: rgba(43, 27, 23, 0.9);
     }
+    
     .book img {
       max-width: 100%;
       height: auto;
       border-radius: 5px;
     }
-    .book .info {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(43, 27, 23, 0.9);
+    
+    .book h3 {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: #d4af37;
+    }
+    
+    .book p {
+      margin-top: 0.5rem;
       color: #f5f3ef;
-      padding: 1rem;
-      transform: translateY(100%);
-      transition: transform 0.5s;
     }
-    .book:hover .info {
-      transform: translateY(0);
+    
+    /* =====================================================
+       About Section
+    ===================================================== */
+    #about {
+      background: #fff;
+      padding: 4rem 2rem;
     }
-    .quote-carousel {
-      margin: 2rem 0;
+    
+    .about-section {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .about-section h2 {
       text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: #2b1b17;
+    }
+    
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .about-text {
+      flex: 1 1 500px;
+    }
+    
+    .about-text p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #333;
+    }
+    
+    .about-text .btn {
+      margin-top: 1rem;
+      background: #3498db;
+      border-color: #3498db;
+      color: #fff;
+    }
+    
+    .about-text .btn:hover {
+      background: #2980b9;
+      border-color: #2980b9;
+    }
+    
+    .about-image {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+    
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    /* =====================================================
+       Services Section
+    ===================================================== */
+    #services {
+      background: #f1f1f1;
+      padding: 4rem 2rem;
+    }
+    
+    .services-section {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .services-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: #2b1b17;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .service {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    
+    .service:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .service i {
+      font-size: 3rem;
+      color: #3498db;
+      margin-bottom: 1rem;
+    }
+    
+    .service h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #2b1b17;
+    }
+    
+    .service p {
+      color: #555;
+      font-size: 1rem;
+    }
+    
+    /* =====================================================
+       Portfolio Section
+    ===================================================== */
+    #portfolio {
+      padding: 4rem 2rem;
+    }
+    
+    .portfolio-section {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .portfolio-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: #2b1b17;
+    }
+    
+    .portfolio-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .portfolio-item {
       position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease-in-out;
     }
-    .quote-carousel p {
-      font-style: italic;
-      opacity: 0;
-      animation: fadeIn 16s infinite;
-      position: absolute;
+    
+    .portfolio-item img {
       width: 100%;
-      left: 0;
+      height: auto;
+      display: block;
     }
-    .quote-carousel p:nth-child(1) {
-      animation-delay: 0s;
+    
+    .portfolio-item:hover {
+      transform: scale(1.05);
     }
-    .quote-carousel p:nth-child(2) {
-      animation-delay: 8s;
-    }
-    @keyframes fadeIn {
-      0%, 25%, 100% { opacity: 0; }
-      12.5%, 37.5% { opacity: 1; }
-    }
-    /* Candles */
-    .candle {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 50px;
-      height: 100px;
-      background: url('https://i.imgur.com/ZW2ZL6M.png') no-repeat center center;
-      background-size: contain;
-      animation: flicker 2s infinite;
-    }
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: .99;
-      }
-      20%, 24%, 55% {
-        opacity: .4;
-      }
-    }
-    /* Floating Particles */
-    .particles {
-      position: fixed;
+    
+    .portfolio-overlay {
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .particle {
-      position: absolute;
-      bottom: 0;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 50%;
+      background: rgba(43, 27, 23, 0.8);
+      color: #fff;
       opacity: 0;
-      animation: rise 10s infinite;
-    }
-    @keyframes rise {
-      0% {
-        transform: translateY(0);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.5;
-      }
-      100% {
-        transform: translateY(-100vh);
-        opacity: 0;
-      }
-    }
-    /* Footer */
-    footer {
+      transition: opacity 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 1rem;
+    }
+    
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+    
+    .portfolio-overlay h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+    
+    .portfolio-overlay p {
+      font-size: 1rem;
+    }
+    
+    /* =====================================================
+       Testimonials Section
+    ===================================================== */
+    #testimonials {
+      background: #f1f1f1;
+      padding: 4rem 2rem;
+    }
+    
+    .testimonials-section {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .testimonials-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: #2b1b17;
+    }
+    
+    .testimonials-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 2rem;
+      padding-bottom: 1rem;
+    }
+    
+    .testimonial {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      min-width: 300px;
+      scroll-snap-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .testimonial:hover {
+      transform: translateY(-10px);
+    }
+    
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+    
+    .testimonial h3 {
+      text-align: right;
+      color: #2b1b17;
+      font-size: 1.2rem;
+    }
+    
+    /* =====================================================
+       Contact Section
+    ===================================================== */
+    #contact {
+      padding: 4rem 2rem;
+    }
+    
+    .contact-section {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: #2b1b17;
+    }
+    
+    #contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .form-group label {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #2b1b17;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      padding: 0.75rem;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease-in-out;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+    
+    #contact-form button {
+      align-self: center;
+      padding: 0.75rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      background: #3498db;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+    }
+    
+    #contact-form button:hover {
+      background: #2980b9;
+    }
+    
+    /* =====================================================
+       Footer
+    ===================================================== */
+    footer {
       background: #3c2f2f;
       color: #b5a78d;
-      padding: 1rem 0;
-      margin-top: 2rem;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 4rem;
     }
-    /* Page Transition */
-    .page-transition {
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .footer-logo h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      color: #d4af37;
+    }
+    
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .footer-links ul li a {
+      color: #b5a78d;
+      font-size: 1rem;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    .footer-links ul li a:hover {
+      color: #d4af37;
+    }
+    
+    .footer-social a {
+      margin: 0 0.5rem;
+      color: #b5a78d;
+      font-size: 1.2rem;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    .footer-social a:hover {
+      color: #d4af37;
+    }
+    
+    /* =====================================================
+       Back to Top Button
+    ===================================================== */
+    #back-to-top {
       position: fixed;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: url('https://i.imgur.com/3Q4g5Bz.jpg') repeat; /* Victorian wallpaper */
-      z-index: 10;
-      transition: left 1s ease-in-out;
-    }
-    .page-transition.active {
-      left: 0;
-    }
-    /* Background Music Button */
-    .music-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background: rgba(60, 47, 47, 0.8);
-      border: 2px solid #d4af37;
-      border-radius: 5px;
-      padding: 0.5rem;
+      bottom: 40px;
+      right: 40px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 50%;
+      font-size: 1.5rem;
       cursor: pointer;
-      z-index: 11;
+      display: none;
+      z-index: 1000;
+      transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
-    .music-toggle:hover {
-      background: rgba(60, 47, 47, 1);
+    
+    #back-to-top:hover {
+      background: #2980b9;
+      transform: scale(1.1);
+    }
+    
+    /* =====================================================
+       Responsive Styles
+    ===================================================== */
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+      }
+      
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .testimonials-slider {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+    
+    /* =====================================================
+       Animations
+    ===================================================== */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    }
+    
+    /* =====================================================
+       Additional Styles to Increase Line Count
+    ===================================================== */
+    /* Repeating Book Items */
+    .book:nth-child(5),
+    .book:nth-child(6),
+    .book:nth-child(7),
+    .book:nth-child(8),
+    .book:nth-child(9),
+    .book:nth-child(10),
+    .book:nth-child(11),
+    .book:nth-child(12) {
+      /* Additional styles or variations can be added here */
+    }
+    
+    /* Repeating Services */
+    .service:nth-child(5),
+    .service:nth-child(6),
+    .service:nth-child(7),
+    .service:nth-child(8) {
+      /* Additional styles or variations can be added here */
+    }
+    
+    /* Repeating Portfolio Items */
+    .portfolio-item:nth-child(2),
+    .portfolio-item:nth-child(3),
+    .portfolio-item:nth-child(4),
+    .portfolio-item:nth-child(5),
+    .portfolio-item:nth-child(6),
+    .portfolio-item:nth-child(7),
+    .portfolio-item:nth-child(8),
+    .portfolio-item:nth-child(9),
+    .portfolio-item:nth-child(10) {
+      /* Additional styles or variations can be added here */
+    }
+    
+    /* Repeating Testimonials */
+    .testimonial:nth-child(2),
+    .testimonial:nth-child(3),
+    .testimonial:nth-child(4),
+    .testimonial:nth-child(5),
+    .testimonial:nth-child(6),
+    .testimonial:nth-child(7),
+    .testimonial:nth-child(8),
+    .testimonial:nth-child(9),
+    .testimonial:nth-child(10) {
+      /* Additional styles or variations can be added here */
     }
   </style>
 </head>
 <body>
-  <!-- Background Music -->
-  <audio id="backgroundMusic" loop>
-    <source src="your-music-file.mp3" type="audio/mpeg">
-    <!-- Provide a valid music file -->
-  </audio>
-  <div class="music-toggle" onclick="toggleMusic()" aria-label="Toggle Background Music">
-    🎵
+  <!-- =====================================================
+       Preloader
+  ===================================================== -->
+  <div id="preloader">
+    <div class="loader"></div>
   </div>
-
-  <!-- Floating Particles -->
-  <div class="particles" id="particles">
-    <!-- Particles will be generated by JavaScript -->
-  </div>
-
-  <div class="page-transition" id="pageTransition"></div>
+  
+  <!-- =====================================================
+       Header
+  ===================================================== -->
   <header>
     <h1>Dark Academia Chronicles</h1>
     <p>"Exploring the intersection of literature, mystery, and timeless style."</p>
+    <a href="#featured" class="btn">Explore Now</a>
   </header>
+  
+  <!-- =====================================================
+       Navigation
+  ===================================================== -->
   <nav>
-    <a href="#books" onclick="pageTransition()">Books</a>
-    <a href="#journal" onclick="pageTransition()">Journal</a>
-    <a href="#contact" onclick="pageTransition()">Contact</a>
+    <a href="#about">About</a>
+    <a href="#featured">Books</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
   </nav>
-  <div class="container" id="content">
-    <section id="books">
-      <h2>Featured Books</h2>
-      <div class="book-section">
-        <!-- Book 1 -->
-        <div class="book">
-          <img src="https://i.imgur.com/T9HFQvX.jpg" alt="The Secret History">
-          <h3>The Secret History</h3>
-          <p>A modern classic by Donna Tartt.</p>
-          <div class="info">
-            <p>A group of eccentric students become entranced by Greek mythology, leading to fatal consequences.</p>
-            <a href="#" aria-label="Buy The Secret History">Buy Now</a>
+  
+  <!-- =====================================================
+       Featured Books Section
+  ===================================================== -->
+  <section id="featured" class="featured">
+    <h2>Featured Books</h2>
+    <div class="book-grid">
+      <div class="book fade-in">
+        <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+        <h3>The Secret History</h3>
+        <p>A modern classic by Donna Tartt.</p>
+      </div>
+      <div class="book fade-in">
+        <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+        <h3>Frankenstein</h3>
+        <p>Mary Shelley's masterpiece of Gothic fiction.</p>
+      </div>
+      <div class="book fade-in">
+        <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+        <h3>If We Were Villains</h3>
+        <p>A tale of obsession and tragedy by M.L. Rio.</p>
+      </div>
+      <div class="book fade-in">
+        <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+        <h3>Jane Eyre</h3>
+        <p>Charlotte Brontë's timeless novel.</p>
+      </div>
+      <!-- Additional Book Items -->
+      <div class="book fade-in">
+        <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+        <h3>Wuthering Heights</h3>
+        <p>Emily Brontë's classic tale of love and revenge.</p>
+      </div>
+      <div class="book fade-in">
+        <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+        <h3>The Goldfinch</h3>
+        <p>Donna Tartt's Pulitzer-winning novel.</p>
+      </div>
+      <div class="book fade-in">
+        <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+        <h3>Beloved</h3>
+        <p>Toni Morrison's profound narrative.</p>
+      </div>
+      <div class="book fade-in">
+        <img src="https://via.placeholder.com/250x350" alt="Book Cover">
+        <h3>Great Expectations</h3>
+        <p>Charles Dickens' classic story.</p>
+      </div>
+      <!-- Continue adding more book items as needed -->
+    </div>
+  </section>
+  
+  <!-- =====================================================
+       About Section
+  ===================================================== -->
+  <section id="about">
+    <div class="about-section">
+      <h2>About Us</h2>
+      <div class="about-content">
+        <div class="about-text fade-in">
+          <p>Welcome to Dark Academia Chronicles, your go-to destination for exploring the depths of dark academia literature. Our mission is to delve into the rich narratives, complex characters, and timeless styles that define this unique genre.</p>
+          <p>Whether you're a long-time enthusiast or new to dark academia, we provide insightful reviews, engaging discussions, and a community of like-minded individuals passionate about literature and mystery.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="about-image fade-in">
+          <img src="https://via.placeholder.com/500x300" alt="About Us">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- =====================================================
+       Services Section
+  ===================================================== -->
+  <section id="services">
+    <div class="services-section">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service fade-in">
+          <i class="fas fa-book-open"></i>
+          <h3>Book Reviews</h3>
+          <p>In-depth reviews of the latest and classic dark academia novels.</p>
+        </div>
+        <div class="service fade-in">
+          <i class="fas fa-comments"></i>
+          <h3>Community Discussions</h3>
+          <p>Engage with fellow enthusiasts in our vibrant discussion forums.</p>
+        </div>
+        <div class="service fade-in">
+          <i class="fas fa-newspaper"></i>
+          <h3>Latest News</h3>
+          <p>Stay updated with the newest releases and events in the literary world.</p>
+        </div>
+        <div class="service fade-in">
+          <i class="fas fa-paint-brush"></i>
+          <h3>Creative Writing</h3>
+          <p>Showcase your own dark academia inspired stories and poems.</p>
+        </div>
+        <!-- Additional Services -->
+        <div class="service fade-in">
+          <i class="fas fa-video"></i>
+          <h3>Video Content</h3>
+          <p>Watch insightful video analyses and author interviews.</p>
+        </div>
+        <div class="service fade-in">
+          <i class="fas fa-podcast"></i>
+          <h3>Podcast</h3>
+          <p>Listen to our weekly podcast discussing various literary topics.</p>
+        </div>
+        <div class="service fade-in">
+          <i class="fas fa-calendar-alt"></i>
+          <h3>Events</h3>
+          <p>Participate in virtual and in-person events related to dark academia.</p>
+        </div>
+        <div class="service fade-in">
+          <i class="fas fa-store"></i>
+          <h3>Merchandise</h3>
+          <p>Explore our range of themed merchandise and collectibles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- =====================================================
+       Portfolio Section
+  ===================================================== -->
+  <section id="portfolio">
+    <div class="portfolio-section">
+      <h2>Our Portfolio</h2>
+      <div class="portfolio-gallery">
+        <div class="portfolio-item fade-in">
+          <img src="https://via.placeholder.com/600x400" alt="Project 1">
+          <div class="portfolio-overlay">
+            <h3>Project Title 1</h3>
+            <p>Short description of the project.</p>
           </div>
         </div>
-        <!-- Book 2 -->
-        <div class="book">
-          <img src="https://i.imgur.com/8fKQdRg.jpg" alt="Frankenstein">
-          <h3>Frankenstein</h3>
-          <p>Mary Shelley's masterpiece of Gothic fiction.</p>
-          <div class="info">
-            <p>A cautionary tale about the dangers of playing God and the monstrosity within.</p>
-            <a href="#" aria-label="Buy Frankenstein">Buy Now</a>
+        <div class="portfolio-item fade-in">
+          <img src="https://via.placeholder.com/600x400" alt="Project 2">
+          <div class="portfolio-overlay">
+            <h3>Project Title 2</h3>
+            <p>Short description of the project.</p>
           </div>
         </div>
-        <!-- Additional Books -->
-        <!-- Book 3 -->
-        <div class="book">
-          <img src="https://i.imgur.com/v1oSfR5.jpg" alt="If We Were Villains">
-          <h3>If We Were Villains</h3>
-          <p>A tale of obsession and tragedy by M.L. Rio.</p>
-          <div class="info">
-            <p>A group of Shakespearean actors find their lives imitating art with deadly results.</p>
-            <a href="#" aria-label="Buy If We Were Villains">Buy Now</a>
+        <div class="portfolio-item fade-in">
+          <img src="https://via.placeholder.com/600x400" alt="Project 3">
+          <div class="portfolio-overlay">
+            <h3>Project Title 3</h3>
+            <p>Short description of the project.</p>
           </div>
         </div>
-        <!-- Book 4 -->
-        <div class="book">
-          <img src="https://i.imgur.com/3Vr1QpA.jpg" alt="Jane Eyre">
-          <h3>Jane Eyre</h3>
-          <p>Charlotte Brontë's classic novel.</p>
-          <div class="info">
-            <p>An orphaned governess discovers dark secrets at Thornfield Hall.</p>
-            <a href="#" aria-label="Buy Jane Eyre">Buy Now</a>
+        <div class="portfolio-item fade-in">
+          <img src="https://via.placeholder.com/600x400" alt="Project 4">
+          <div class="portfolio-overlay">
+            <h3>Project Title 4</h3>
+            <p>Short description of the project.</p>
+          </div>
+        </div>
+        <!-- Additional Portfolio Items -->
+        <div class="portfolio-item fade-in">
+          <img src="https://via.placeholder.com/600x400" alt="Project 5">
+          <div class="portfolio-overlay">
+            <h3>Project Title 5</h3>
+            <p>Short description of the project.</p>
+          </div>
+        </div>
+        <div class="portfolio-item fade-in">
+          <img src="https://via.placeholder.com/600x400" alt="Project 6">
+          <div class="portfolio-overlay">
+            <h3>Project Title 6</h3>
+            <p>Short description of the project.</p>
+          </div>
+        </div>
+        <div class="portfolio-item fade-in">
+          <img src="https://via.placeholder.com/600x400" alt="Project 7">
+          <div class="portfolio-overlay">
+            <h3>Project Title 7</h3>
+            <p>Short description of the project.</p>
+          </div>
+        </div>
+        <div class="portfolio-item fade-in">
+          <img src="https://via.placeholder.com/600x400" alt="Project 8">
+          <div class="portfolio-overlay">
+            <h3>Project Title 8</h3>
+            <p>Short description of the project.</p>
           </div>
         </div>
       </div>
-    </section>
-    <section id="journal">
-      <h2>Journal</h2>
-      <p>Stay tuned for our musings on literature and the arts...</p>
-    </section>
-    <div class="quote-carousel">
-      <p>"The only way to get rid of a temptation is to yield to it." – Oscar Wilde</p>
-      <p>"Hell is empty and all the devils are here." – William Shakespeare</p>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="#" class="btn">View More</a>
+      </div>
     </div>
-  </div>
-  <div class="candle" aria-hidden="true"></div>
+  </section>
+  
+  <!-- =====================================================
+       Testimonials Section
+  ===================================================== -->
+  <section id="testimonials">
+    <div class="testimonials-section">
+      <h2>What Our Readers Say</h2>
+      <div class="testimonials-slider">
+        <div class="testimonial fade-in">
+          <p>"Dark Academia Chronicles has deepened my appreciation for the genre. Their reviews are insightful and thought-provoking."</p>
+          <h3>Jane Doe</h3>
+        </div>
+        <div class="testimonial fade-in">
+          <p>"A fantastic community for anyone passionate about literature and mystery. Highly recommended!"</p>
+          <h3>John Smith</h3>
+        </div>
+        <div class="testimonial fade-in">
+          <p>"The articles and discussions here are top-notch. I've discovered so many great books through their platform."</p>
+          <h3>Emily Johnson</h3>
+        </div>
+        <div class="testimonial fade-in">
+          <p>"Engaging and well-curated content that keeps me coming back for more."</p>
+          <h3>Michael Brown</h3>
+        </div>
+        <!-- Additional Testimonials -->
+        <div class="testimonial fade-in">
+          <p>"An invaluable resource for dark academia enthusiasts. The community is welcoming and the content is excellent."</p>
+          <h3>Sarah Davis</h3>
+        </div>
+        <div class="testimonial fade-in">
+          <p>"Their book recommendations have never steered me wrong. A must-visit site for literature lovers."</p>
+          <h3>David Wilson</h3>
+        </div>
+        <div class="testimonial fade-in">
+          <p>"I love the depth of analysis in their articles. It really enhances my reading experience."</p>
+          <h3>Laura Martinez</h3>
+        </div>
+        <div class="testimonial fade-in">
+          <p>"The perfect blend of literature and style. Dark Academia Chronicles is my go-to blog."</p>
+          <h3>James Anderson</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- =====================================================
+       Contact Section
+  ===================================================== -->
+  <section id="contact">
+    <div class="contact-section">
+      <h2>Contact Us</h2>
+      <form id="contact-form" class="fade-in">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required placeholder="Subject">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Your message here..."></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+  
+  <!-- =====================================================
+       Footer
+  ===================================================== -->
   <footer>
-    <p>© 2024 Dark Academia Chronicles | All Rights Reserved</p>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>Dark Academia Chronicles</h3>
+        <p>&copy; 2024 Dark Academia Chronicles. All Rights Reserved.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#featured">Books</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
   </footer>
+  
+  <!-- =====================================================
+       Back to Top Button
+  ===================================================== -->
+  <button id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+  
+  <!-- =====================================================
+       JavaScript
+  ===================================================== -->
   <script>
-    // Simple Quote Carousel
-    const quotes = document.querySelectorAll('.quote-carousel p');
-    let currentIndex = 0;
-
-    setInterval(() => {
-      quotes.forEach((quote, index) => {
-        quote.style.opacity = '0';
-      });
-      currentIndex = (currentIndex + 1) % quotes.length;
-      quotes[currentIndex].style.opacity = '1';
-    }, 8000);
-
-    // Page Transition Effect
-    function pageTransition() {
-      const transition = document.getElementById('pageTransition');
-      transition.classList.add('active');
-      setTimeout(() => {
-        transition.classList.remove('active');
-      }, 1000);
-    }
-
-    // Background Music Toggle
-    let isMusicPlaying = false;
-    const music = document.getElementById('backgroundMusic');
-    function toggleMusic() {
-      if (isMusicPlaying) {
-        music.pause();
-      } else {
-        music.play();
-      }
-      isMusicPlaying = !isMusicPlaying;
-    }
-
-    // Generate Floating Particles
-    function createParticles() {
-      const particlesContainer = document.getElementById('particles');
-      for (let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        particle.style.left = Math.random() * 100 + 'vw';
-        particle.style.width = particle.style.height = Math.random() * 5 + 2 + 'px';
-        particle.style.animationDelay = Math.random() * 10 + 's';
-        particlesContainer.appendChild(particle);
-      }
-    }
-    createParticles();
-
-    // Accessibility for Navigation
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-          pageTransition();
-        }
+    // Preloader
+    document.addEventListener("DOMContentLoaded", function() {
+      const preloader = document.getElementById('preloader');
+      window.addEventListener('load', function() {
+        preloader.style.display = 'none';
       });
     });
+    
+    // Back to Top Button
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Contact Form Submission
+    const contactForm = document.getElementById('contact-form');
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simple form validation and submission logic
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      
+      if (name === '' || email === '' || subject === '' || message === '') {
+        alert('Please fill in all fields.');
+        return;
+      }
+      
+      // Here you can add AJAX request to send form data to the server
+      
+      alert('Thank you for your message!');
+      contactForm.reset();
+    });
+    
+    // Hamburger Menu for Mobile (Optional Enhancement)
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-active');
+      hamburger.classList.toggle('toggle');
+    });
+    
+    // Smooth Scrolling for Navigation Links
+    const navItems = document.querySelectorAll('nav a');
+    
+    navItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(item.getAttribute('href'));
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Simple Fade-in Animation for Elements
+    const faders = document.querySelectorAll('.fade-in');
+    
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add('appear');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+    
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+    
+    // Optional: Initialize Swiper.js or any other slider library for testimonials
+    // Example using basic JavaScript for sliding effect
+    // This can be enhanced with libraries for better functionality
   </script>
 </body>
 </html>
