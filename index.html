@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Academia Blog</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Garamond', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #2b2a30;
+      color: #f5f3ef;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #d4af37;
+    }
+    a {
+      color: #b5a78d;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #d4af37;
+    }
+    /* Header */
+    header {
+      background: url('https://via.placeholder.com/1500x400') no-repeat center center/cover;
+      color: #f5f3ef;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #1c1b20;
+      padding: 1rem 0;
+    }
+    nav a {
+      margin: 0 1rem;
+    }
+    /* Main Content */
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .book-section {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .book {
+      background: #3a383f;
+      padding: 1rem;
+      border-radius: 5px;
+      text-align: center;
+      width: calc(50% - 1rem);
+    }
+    .book img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .quote-carousel {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .quote-carousel p {
+      font-style: italic;
+      opacity: 0;
+      animation: fadeIn 4s infinite;
+    }
+    @keyframes fadeIn {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #1c1b20;
+      color: #b5a78d;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dark Academia Chronicles</h1>
+    <p>"Exploring the intersection of literature, mystery, and timeless style."</p>
+  </header>
+  <nav>
+    <a href="#books">Books</a>
+    <a href="#journal">Journal</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="container">
+    <section id="books">
+      <h2>Featured Books</h2>
+      <div class="book-section">
+        <div class="book">
+          <img src="https://via.placeholder.com/150" alt="Book Cover">
+          <h3>The Secret History</h3>
+          <p>A modern classic by Donna Tartt.</p>
+        </div>
+        <div class="book">
+          <img src="https://via.placeholder.com/150" alt="Book Cover">
+          <h3>Frankenstein</h3>
+          <p>Mary Shelley's masterpiece of Gothic fiction.</p>
+        </div>
+      </div>
+    </section>
+    <section id="journal">
+      <h2>Journal</h2>
+      <p>Stay tuned for our musings on literature and the arts...</p>
+    </section>
+    <div class="quote-carousel">
+      <p>"The only way to get rid of a temptation is to yield to it." – Oscar Wilde</p>
+      <p>"Hell is empty and all the devils are here." – William Shakespeare</p>
+    </div>
+  </div>
+  <footer>
+    <p>© 2024 Dark Academia Chronicles | All Rights Reserved</p>
+  </footer>
+  <script>
+    // Simple Quote Carousel
+    const quotes = document.querySelectorAll('.quote-carousel p');
+    let currentIndex = 0;
+
+    setInterval(() => {
+      quotes[currentIndex].style.opacity = '0';
+      currentIndex = (currentIndex + 1) % quotes.length;
+      quotes[currentIndex].style.opacity = '1';
+    }, 4000);
+  </script>
+</body>
+</html>
