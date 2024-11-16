@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Comprehensive Landing Page</title>
+  <title>Dark Academia Chronicles</title>
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:ital,wght@1,700&family=Parisienne&display=swap" rel="stylesheet">
@@ -319,6 +319,67 @@
     }
     
     /* =====================================================
+       Products Section
+    ===================================================== */
+    #products {
+      background: #fff;
+      padding: 4rem 2rem;
+    }
+    
+    .products-section {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .products-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: #2b1b17;
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .product {
+      background: rgba(60, 47, 47, 0.9);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 2px solid #d4af37;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    }
+    
+    .product:hover {
+      transform: translateY(-10px);
+      background: rgba(43, 27, 23, 0.9);
+    }
+    
+    .product img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    
+    .product h3 {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: #d4af37;
+    }
+    
+    .product p {
+      margin-top: 0.5rem;
+      color: #f5f3ef;
+    }
+    
+    /* =====================================================
        Portfolio Section
     ===================================================== */
     #portfolio {
@@ -612,6 +673,10 @@
       .footer-content {
         flex-direction: column;
       }
+      
+      .book-grid, .services-grid, .products-grid, .portfolio-gallery {
+        grid-template-columns: 1fr;
+      }
     }
     
     /* =====================================================
@@ -674,6 +739,190 @@
     .testimonial:nth-child(10) {
       /* Additional styles or variations can be added here */
     }
+    
+    /* Repeating Products */
+    .product:nth-child(5),
+    .product:nth-child(6),
+    .product:nth-child(7),
+    .product:nth-child(8),
+    .product:nth-child(9),
+    .product:nth-child(10),
+    .product:nth-child(11),
+    .product:nth-child(12) {
+      /* Additional styles or variations can be added here */
+    }
+    
+    /* Additional Table Styles for Affiliate Marketing */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    
+    table th,
+    table td {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      text-align: left;
+    }
+    
+    table th {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    
+    .affiliate-link {
+      color: #3498db;
+      font-weight: bold;
+    }
+    
+    .affiliate-link:hover {
+      color: #2980b9;
+    }
+    
+    /* =====================================================
+       Loader Styles
+    ===================================================== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-top: 16px solid #3498db;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* =====================================================
+       Additional Components
+    ===================================================== */
+    /* Modal Styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1001; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    }
+    
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+      border-radius: 10px;
+      position: relative;
+    }
+    
+    .close-modal {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .close-modal:hover,
+    .close-modal:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    /* =====================================================
+       Table Styles for Affiliate Marketing
+    ===================================================== */
+    .affiliate-table {
+      margin: 4rem auto;
+      max-width: 1200px;
+      padding: 0 2rem;
+    }
+    
+    .affiliate-table h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: #2b1b17;
+    }
+    
+    .affiliate-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .affiliate-table th,
+    .affiliate-table td {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      text-align: left;
+    }
+    
+    .affiliate-table th {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    
+    .affiliate-product-image {
+      width: 100px;
+      height: auto;
+    }
+    
+    /* =====================================================
+       Media Queries for Further Responsiveness
+    ===================================================== */
+    @media (max-width: 1024px) {
+      .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      
+      .book-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      header p {
+        font-size: 1.2rem;
+      }
+      
+      .btn {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+      
+      nav a {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -700,6 +949,7 @@
     <a href="#about">About</a>
     <a href="#featured">Books</a>
     <a href="#services">Services</a>
+    <a href="#products">Products</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
@@ -715,42 +965,50 @@
         <img src="https://via.placeholder.com/250x350" alt="Book Cover">
         <h3>The Secret History</h3>
         <p>A modern classic by Donna Tartt.</p>
+        <a href="https://affiliate-link.com/book1" class="btn affiliate-link">Buy Now</a>
       </div>
       <div class="book fade-in">
         <img src="https://via.placeholder.com/250x350" alt="Book Cover">
         <h3>Frankenstein</h3>
         <p>Mary Shelley's masterpiece of Gothic fiction.</p>
+        <a href="https://affiliate-link.com/book2" class="btn affiliate-link">Buy Now</a>
       </div>
       <div class="book fade-in">
         <img src="https://via.placeholder.com/250x350" alt="Book Cover">
         <h3>If We Were Villains</h3>
         <p>A tale of obsession and tragedy by M.L. Rio.</p>
+        <a href="https://affiliate-link.com/book3" class="btn affiliate-link">Buy Now</a>
       </div>
       <div class="book fade-in">
         <img src="https://via.placeholder.com/250x350" alt="Book Cover">
         <h3>Jane Eyre</h3>
         <p>Charlotte Brontë's timeless novel.</p>
+        <a href="https://affiliate-link.com/book4" class="btn affiliate-link">Buy Now</a>
       </div>
       <!-- Additional Book Items -->
       <div class="book fade-in">
         <img src="https://via.placeholder.com/250x350" alt="Book Cover">
         <h3>Wuthering Heights</h3>
         <p>Emily Brontë's classic tale of love and revenge.</p>
+        <a href="https://affiliate-link.com/book5" class="btn affiliate-link">Buy Now</a>
       </div>
       <div class="book fade-in">
         <img src="https://via.placeholder.com/250x350" alt="Book Cover">
         <h3>The Goldfinch</h3>
         <p>Donna Tartt's Pulitzer-winning novel.</p>
+        <a href="https://affiliate-link.com/book6" class="btn affiliate-link">Buy Now</a>
       </div>
       <div class="book fade-in">
         <img src="https://via.placeholder.com/250x350" alt="Book Cover">
         <h3>Beloved</h3>
         <p>Toni Morrison's profound narrative.</p>
+        <a href="https://affiliate-link.com/book7" class="btn affiliate-link">Buy Now</a>
       </div>
       <div class="book fade-in">
         <img src="https://via.placeholder.com/250x350" alt="Book Cover">
         <h3>Great Expectations</h3>
         <p>Charles Dickens' classic story.</p>
+        <a href="https://affiliate-link.com/book8" class="btn affiliate-link">Buy Now</a>
       </div>
       <!-- Continue adding more book items as needed -->
     </div>
@@ -766,7 +1024,7 @@
         <div class="about-text fade-in">
           <p>Welcome to Dark Academia Chronicles, your go-to destination for exploring the depths of dark academia literature. Our mission is to delve into the rich narratives, complex characters, and timeless styles that define this unique genre.</p>
           <p>Whether you're a long-time enthusiast or new to dark academia, we provide insightful reviews, engaging discussions, and a community of like-minded individuals passionate about literature and mystery.</p>
-          <a href="#" class="btn">Read More</a>
+          <a href="#services" class="btn">Read More</a>
         </div>
         <div class="about-image fade-in">
           <img src="https://via.placeholder.com/500x300" alt="About Us">
@@ -828,6 +1086,69 @@
   </section>
   
   <!-- =====================================================
+       Products Section
+  ===================================================== -->
+  <section id="products">
+    <div class="products-section">
+      <h2>Our Vintage Products</h2>
+      <div class="products-grid">
+        <div class="product fade-in">
+          <img src="https://via.placeholder.com/250x250" alt="Vintage Typewriter">
+          <h3>Vintage Typewriter</h3>
+          <p>Bring the classic charm of a typewriter to your desk.</p>
+          <a href="https://affiliate-link.com/product1" class="btn affiliate-link">Buy Now</a>
+        </div>
+        <div class="product fade-in">
+          <img src="https://via.placeholder.com/250x250" alt="Leatherbound Journal">
+          <h3>Leatherbound Journal</h3>
+          <p>Perfect for your thoughts, sketches, and literary notes.</p>
+          <a href="https://affiliate-link.com/product2" class="btn affiliate-link">Buy Now</a>
+        </div>
+        <div class="product fade-in">
+          <img src="https://via.placeholder.com/250x250" alt="Ink and Quill Set">
+          <h3>Ink and Quill Set</h3>
+          <p>Write beautifully with our premium ink and quill set.</p>
+          <a href="https://affiliate-link.com/product3" class="btn affiliate-link">Buy Now</a>
+        </div>
+        <div class="product fade-in">
+          <img src="https://via.placeholder.com/250x250" alt="Desk Decor">
+          <h3>Desk Decor</h3>
+          <p>Add a touch of elegance with our curated desk decorations.</p>
+          <a href="https://affiliate-link.com/product4" class="btn affiliate-link">Buy Now</a>
+        </div>
+        <div class="product fade-in">
+          <img src="https://via.placeholder.com/250x250" alt="Art Prints">
+          <h3>Art Prints</h3>
+          <p>Enhance your space with dark academia themed art prints.</p>
+          <a href="https://affiliate-link.com/product5" class="btn affiliate-link">Buy Now</a>
+        </div>
+        <div class="product fade-in">
+          <img src="https://via.placeholder.com/250x250" alt="Tea Supplies">
+          <h3>Tea Supplies</h3>
+          <p>Enjoy your reading sessions with our exquisite tea sets.</p>
+          <a href="https://affiliate-link.com/product6" class="btn affiliate-link">Buy Now</a>
+        </div>
+        <div class="product fade-in">
+          <img src="https://via.placeholder.com/250x250" alt="Vintage Lamp">
+          <h3>Vintage Lamp</h3>
+          <p>Illuminate your workspace with a vintage-inspired lamp.</p>
+          <a href="https://affiliate-link.com/product7" class="btn affiliate-link">Buy Now</a>
+        </div>
+        <div class="product fade-in">
+          <img src="https://via.placeholder.com/250x250" alt="Bookends">
+          <h3>Bookends</h3>
+          <p>Keep your literary collection organized with stylish bookends.</p>
+          <a href="https://affiliate-link.com/product8" class="btn affiliate-link">Buy Now</a>
+        </div>
+        <!-- Continue adding more product items as needed -->
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="#affiliate-products" class="btn">Shop All Products</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- =====================================================
        Portfolio Section
   ===================================================== -->
   <section id="portfolio">
@@ -839,6 +1160,7 @@
           <div class="portfolio-overlay">
             <h3>Project Title 1</h3>
             <p>Short description of the project.</p>
+            <button class="btn" onclick="openModal('modal1')">Learn More</button>
           </div>
         </div>
         <div class="portfolio-item fade-in">
@@ -846,6 +1168,7 @@
           <div class="portfolio-overlay">
             <h3>Project Title 2</h3>
             <p>Short description of the project.</p>
+            <button class="btn" onclick="openModal('modal2')">Learn More</button>
           </div>
         </div>
         <div class="portfolio-item fade-in">
@@ -853,6 +1176,7 @@
           <div class="portfolio-overlay">
             <h3>Project Title 3</h3>
             <p>Short description of the project.</p>
+            <button class="btn" onclick="openModal('modal3')">Learn More</button>
           </div>
         </div>
         <div class="portfolio-item fade-in">
@@ -860,6 +1184,7 @@
           <div class="portfolio-overlay">
             <h3>Project Title 4</h3>
             <p>Short description of the project.</p>
+            <button class="btn" onclick="openModal('modal4')">Learn More</button>
           </div>
         </div>
         <!-- Additional Portfolio Items -->
@@ -868,6 +1193,7 @@
           <div class="portfolio-overlay">
             <h3>Project Title 5</h3>
             <p>Short description of the project.</p>
+            <button class="btn" onclick="openModal('modal5')">Learn More</button>
           </div>
         </div>
         <div class="portfolio-item fade-in">
@@ -875,6 +1201,7 @@
           <div class="portfolio-overlay">
             <h3>Project Title 6</h3>
             <p>Short description of the project.</p>
+            <button class="btn" onclick="openModal('modal6')">Learn More</button>
           </div>
         </div>
         <div class="portfolio-item fade-in">
@@ -882,6 +1209,7 @@
           <div class="portfolio-overlay">
             <h3>Project Title 7</h3>
             <p>Short description of the project.</p>
+            <button class="btn" onclick="openModal('modal7')">Learn More</button>
           </div>
         </div>
         <div class="portfolio-item fade-in">
@@ -889,6 +1217,7 @@
           <div class="portfolio-overlay">
             <h3>Project Title 8</h3>
             <p>Short description of the project.</p>
+            <button class="btn" onclick="openModal('modal8')">Learn More</button>
           </div>
         </div>
       </div>
@@ -896,6 +1225,145 @@
         <a href="#" class="btn">View More</a>
       </div>
     </div>
+  </section>
+  
+  <!-- =====================================================
+       Modal Components for Portfolio
+  ===================================================== -->
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+      <h2>Project Title 1</h2>
+      <p>Detailed description of Project 1. This project focuses on...</p>
+      <img src="https://via.placeholder.com/600x400" alt="Project 1 Image">
+    </div>
+  </div>
+  
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+      <h2>Project Title 2</h2>
+      <p>Detailed description of Project 2. This project explores...</p>
+      <img src="https://via.placeholder.com/600x400" alt="Project 2 Image">
+    </div>
+  </div>
+  
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('modal3')">&times;</span>
+      <h2>Project Title 3</h2>
+      <p>Detailed description of Project 3. This project delves into...</p>
+      <img src="https://via.placeholder.com/600x400" alt="Project 3 Image">
+    </div>
+  </div>
+  
+  <!-- Modal 4 -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('modal4')">&times;</span>
+      <h2>Project Title 4</h2>
+      <p>Detailed description of Project 4. This project investigates...</p>
+      <img src="https://via.placeholder.com/600x400" alt="Project 4 Image">
+    </div>
+  </div>
+  
+  <!-- Modal 5 -->
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('modal5')">&times;</span>
+      <h2>Project Title 5</h2>
+      <p>Detailed description of Project 5. This project examines...</p>
+      <img src="https://via.placeholder.com/600x400" alt="Project 5 Image">
+    </div>
+  </div>
+  
+  <!-- Modal 6 -->
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('modal6')">&times;</span>
+      <h2>Project Title 6</h2>
+      <p>Detailed description of Project 6. This project highlights...</p>
+      <img src="https://via.placeholder.com/600x400" alt="Project 6 Image">
+    </div>
+  </div>
+  
+  <!-- Modal 7 -->
+  <div id="modal7" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('modal7')">&times;</span>
+      <h2>Project Title 7</h2>
+      <p>Detailed description of Project 7. This project showcases...</p>
+      <img src="https://via.placeholder.com/600x400" alt="Project 7 Image">
+    </div>
+  </div>
+  
+  <!-- Modal 8 -->
+  <div id="modal8" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('modal8')">&times;</span>
+      <h2>Project Title 8</h2>
+      <p>Detailed description of Project 8. This project presents...</p>
+      <img src="https://via.placeholder.com/600x400" alt="Project 8 Image">
+    </div>
+  </div>
+  
+  <!-- =====================================================
+       Affiliate Marketing Table
+  ===================================================== -->
+  <section id="affiliate-products" class="affiliate-table">
+    <h2>Affiliate Products</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Image</th>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Affiliate Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="https://via.placeholder.com/100x100" alt="Product 1" class="affiliate-product-image"></td>
+          <td>Vintage Reading Lamp</td>
+          <td>Illuminate your reading nook with this classic vintage lamp.</td>
+          <td>$89.99</td>
+          <td><a href="https://affiliate-link.com/productA1" class="affiliate-link">Buy Now</a></td>
+        </tr>
+        <tr>
+          <td><img src="https://via.placeholder.com/100x100" alt="Product 2" class="affiliate-product-image"></td>
+          <td>Leatherbound Notebook</td>
+          <td>Elegant notebook for your literary notes and creative ideas.</td>
+          <td>$29.99</td>
+          <td><a href="https://affiliate-link.com/productA2" class="affiliate-link">Buy Now</a></td>
+        </tr>
+        <tr>
+          <td><img src="https://via.placeholder.com/100x100" alt="Product 3" class="affiliate-product-image"></td>
+          <td>Classic Typewriter</td>
+          <td>Bring back the charm of typing with this fully functional typewriter.</td>
+          <td>$199.99</td>
+          <td><a href="https://affiliate-link.com/productA3" class="affiliate-link">Buy Now</a></td>
+        </tr>
+        <tr>
+          <td><img src="https://via.placeholder.com/100x100" alt="Product 4" class="affiliate-product-image"></td>
+          <td>Ink and Quill Set</td>
+          <td>Premium set for beautiful handwritten notes and letters.</td>
+          <td>$49.99</td>
+          <td><a href="https://affiliate-link.com/productA4" class="affiliate-link">Buy Now</a></td>
+        </tr>
+        <tr>
+          <td><img src="https://via.placeholder.com/100x100" alt="Product 5" class="affiliate-product-image"></td>
+          <td>Artisan Tea Set</td>
+          <td>Enjoy your reading with this exquisite tea set.</td>
+          <td>$59.99</td>
+          <td><a href="https://affiliate-link.com/productA5" class="affiliate-link">Buy Now</a></td>
+        </tr>
+        <!-- Continue adding more affiliate products as needed -->
+      </tbody>
+    </table>
   </section>
   
   <!-- =====================================================
@@ -986,6 +1454,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#featured">Books</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -1059,6 +1528,8 @@
     });
     
     // Hamburger Menu for Mobile (Optional Enhancement)
+    // Uncomment the following lines if you add a hamburger menu in navigation
+    /*
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
@@ -1066,6 +1537,7 @@
       navLinks.classList.toggle('nav-active');
       hamburger.classList.toggle('toggle');
     });
+    */
     
     // Smooth Scrolling for Navigation Links
     const navItems = document.querySelectorAll('nav a');
@@ -1101,6 +1573,40 @@
     
     faders.forEach(fader => {
       appearOnScroll.observe(fader);
+    });
+    
+    // Modal Functionality for Portfolio Items
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = 'block';
+    }
+    
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = 'none';
+    }
+    
+    // Close Modal when clicking outside the modal content
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    }
+    
+    // Affiliate Marketing Integration
+    // This section can include tracking scripts or additional functionalities as needed
+    // Example: Adding event listeners to affiliate links for tracking
+    const affiliateLinks = document.querySelectorAll('.affiliate-link');
+    
+    affiliateLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Example tracking code
+        console.log(`Affiliate link clicked: ${link.href}`);
+        // You can integrate with analytics or affiliate tracking APIs here
+      });
     });
     
     // Optional: Initialize Swiper.js or any other slider library for testimonials
