@@ -3,56 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark Academia Blog</title>
+  <title>Dark Academia Chronicles</title>
   <style>
-    /* General Styles */
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Parisienne&display=swap');
+    /* Font Imports */
+    @import url('https://fonts.googleapis.com/css2?family=Garamond&family=Parisienne&display=swap');
 
+    /* General Styles */
     body {
       font-family: 'Garamond', serif;
       margin: 0;
       padding: 0;
-      background-color: #2b2a30;
+      background-color: #2b1b17; /* Deep red background */
       color: #f5f3ef;
       line-height: 1.6;
-      background-image: url('https://via.placeholder.com/1500x1500'); /* Replace with Victorian wallpaper image */
+      background-image: url('https://i.imgur.com/3Q4g5Bz.jpg'); /* Victorian wallpaper */
       background-repeat: repeat;
     }
     h1, h2, h3 {
       color: #d4af37;
-      font-family: 'Parisienne', cursive;
+      font-family: 'Parisienne', cursive; /* Scripted font */
     }
     a {
-      color: #b5a78d;
+      color: #d4af37;
       text-decoration: none;
     }
     a:hover {
-      color: #d4af37;
+      color: #e5c07b;
     }
     /* Header */
     header {
-      background: url('https://via.placeholder.com/1500x400/774f38/ffffff?text=Stained+Glass+Effect') no-repeat center center/cover;
+      background: url('https://i.imgur.com/OaG6S4G.png') no-repeat center center/cover; /* Stained glass */
       color: #f5f3ef;
       padding: 4rem 1rem;
       text-align: center;
       position: relative;
     }
-    header:before {
+    header::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Adds dimming for ambiance */
+      background: rgba(43, 27, 23, 0.6); /* Dark overlay for ambiance */
     }
-    header h1 {
-      margin: 0;
-      font-size: 3.5rem;
-      position: relative;
-      z-index: 1;
-    }
-    header p {
+    header h1, header p {
       position: relative;
       z-index: 1;
     }
@@ -60,11 +55,12 @@
     nav {
       display: flex;
       justify-content: center;
-      background: #1c1b20;
+      background: #3c2f2f;
       padding: 1rem 0;
     }
     nav a {
       margin: 0 1rem;
+      font-weight: bold;
     }
     nav a:hover {
       text-shadow: 0 0 10px #d4af37;
@@ -73,10 +69,30 @@
     .container {
       max-width: 900px;
       margin: 2rem auto;
-      padding: 0 1rem;
-      border: 3px solid #d4af37;
+      padding: 2rem;
+      background: rgba(60, 47, 47, 0.9);
+      border: 2px solid #d4af37;
       border-radius: 10px;
-      background: rgba(58, 56, 63, 0.9);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+    /* Antique Detailing */
+    .container::before, .container::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: url('https://i.imgur.com/0j3m5T4.png') no-repeat center center;
+      background-size: contain;
+    }
+    .container::before {
+      top: -25px;
+      left: -25px;
+    }
+    .container::after {
+      bottom: -25px;
+      right: -25px;
+      transform: rotate(180deg);
     }
     .book-section {
       display: flex;
@@ -84,76 +100,221 @@
       flex-wrap: wrap;
     }
     .book {
-      background: #3a383f;
+      background: #4a3838;
       padding: 1rem;
       border-radius: 10px;
       border: 2px solid #d4af37;
       text-align: center;
       width: calc(50% - 1rem);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.5s, box-shadow 0.5s;
+      position: relative;
+      overflow: hidden;
+    }
+    .book:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
     }
     .book img {
       max-width: 100%;
       height: auto;
       border-radius: 5px;
     }
+    .book .info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(43, 27, 23, 0.9);
+      color: #f5f3ef;
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.5s;
+    }
+    .book:hover .info {
+      transform: translateY(0);
+    }
     .quote-carousel {
       margin: 2rem 0;
       text-align: center;
+      position: relative;
     }
     .quote-carousel p {
       font-style: italic;
       opacity: 0;
-      animation: fadeIn 4s infinite;
+      animation: fadeIn 16s infinite;
+      position: absolute;
+      width: 100%;
+      left: 0;
+    }
+    .quote-carousel p:nth-child(1) {
+      animation-delay: 0s;
+    }
+    .quote-carousel p:nth-child(2) {
+      animation-delay: 8s;
     }
     @keyframes fadeIn {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
+      0%, 25%, 100% { opacity: 0; }
+      12.5%, 37.5% { opacity: 1; }
     }
     /* Candles */
     .candle {
       position: fixed;
-      bottom: 10%;
-      right: 5%;
+      bottom: 10px;
+      right: 10px;
       width: 50px;
       height: 100px;
-      background: radial-gradient(circle, #ffdf91, #d4af37 60%);
-      box-shadow: 0 0 20px #ffdf91, 0 0 40px #d4af37;
-      border-radius: 10px;
+      background: url('https://i.imgur.com/ZW2ZL6M.png') no-repeat center center;
+      background-size: contain;
+      animation: flicker 2s infinite;
+    }
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: .99;
+      }
+      20%, 24%, 55% {
+        opacity: .4;
+      }
+    }
+    /* Floating Particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .particle {
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      opacity: 0;
+      animation: rise 10s infinite;
+    }
+    @keyframes rise {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
     }
     /* Footer */
     footer {
       text-align: center;
-      background: #1c1b20;
+      background: #3c2f2f;
       color: #b5a78d;
       padding: 1rem 0;
       margin-top: 2rem;
     }
+    /* Page Transition */
+    .page-transition {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.imgur.com/3Q4g5Bz.jpg') repeat; /* Victorian wallpaper */
+      z-index: 10;
+      transition: left 1s ease-in-out;
+    }
+    .page-transition.active {
+      left: 0;
+    }
+    /* Background Music Button */
+    .music-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: rgba(60, 47, 47, 0.8);
+      border: 2px solid #d4af37;
+      border-radius: 5px;
+      padding: 0.5rem;
+      cursor: pointer;
+      z-index: 11;
+    }
+    .music-toggle:hover {
+      background: rgba(60, 47, 47, 1);
+    }
   </style>
 </head>
 <body>
+  <!-- Background Music -->
+  <audio id="backgroundMusic" loop>
+    <source src="your-music-file.mp3" type="audio/mpeg">
+    <!-- Provide a valid music file -->
+  </audio>
+  <div class="music-toggle" onclick="toggleMusic()" aria-label="Toggle Background Music">
+    🎵
+  </div>
+
+  <!-- Floating Particles -->
+  <div class="particles" id="particles">
+    <!-- Particles will be generated by JavaScript -->
+  </div>
+
+  <div class="page-transition" id="pageTransition"></div>
   <header>
     <h1>Dark Academia Chronicles</h1>
     <p>"Exploring the intersection of literature, mystery, and timeless style."</p>
   </header>
   <nav>
-    <a href="#books">Books</a>
-    <a href="#journal">Journal</a>
-    <a href="#contact">Contact</a>
+    <a href="#books" onclick="pageTransition()">Books</a>
+    <a href="#journal" onclick="pageTransition()">Journal</a>
+    <a href="#contact" onclick="pageTransition()">Contact</a>
   </nav>
-  <div class="container">
+  <div class="container" id="content">
     <section id="books">
       <h2>Featured Books</h2>
       <div class="book-section">
+        <!-- Book 1 -->
         <div class="book">
-          <img src="https://via.placeholder.com/150" alt="Book Cover">
+          <img src="https://i.imgur.com/T9HFQvX.jpg" alt="The Secret History">
           <h3>The Secret History</h3>
           <p>A modern classic by Donna Tartt.</p>
+          <div class="info">
+            <p>A group of eccentric students become entranced by Greek mythology, leading to fatal consequences.</p>
+            <a href="#" aria-label="Buy The Secret History">Buy Now</a>
+          </div>
         </div>
+        <!-- Book 2 -->
         <div class="book">
-          <img src="https://via.placeholder.com/150" alt="Book Cover">
+          <img src="https://i.imgur.com/8fKQdRg.jpg" alt="Frankenstein">
           <h3>Frankenstein</h3>
           <p>Mary Shelley's masterpiece of Gothic fiction.</p>
+          <div class="info">
+            <p>A cautionary tale about the dangers of playing God and the monstrosity within.</p>
+            <a href="#" aria-label="Buy Frankenstein">Buy Now</a>
+          </div>
+        </div>
+        <!-- Additional Books -->
+        <!-- Book 3 -->
+        <div class="book">
+          <img src="https://i.imgur.com/v1oSfR5.jpg" alt="If We Were Villains">
+          <h3>If We Were Villains</h3>
+          <p>A tale of obsession and tragedy by M.L. Rio.</p>
+          <div class="info">
+            <p>A group of Shakespearean actors find their lives imitating art with deadly results.</p>
+            <a href="#" aria-label="Buy If We Were Villains">Buy Now</a>
+          </div>
+        </div>
+        <!-- Book 4 -->
+        <div class="book">
+          <img src="https://i.imgur.com/3Vr1QpA.jpg" alt="Jane Eyre">
+          <h3>Jane Eyre</h3>
+          <p>Charlotte Brontë's classic novel.</p>
+          <div class="info">
+            <p>An orphaned governess discovers dark secrets at Thornfield Hall.</p>
+            <a href="#" aria-label="Buy Jane Eyre">Buy Now</a>
+          </div>
         </div>
       </div>
     </section>
@@ -166,7 +327,7 @@
       <p>"Hell is empty and all the devils are here." – William Shakespeare</p>
     </div>
   </div>
-  <div class="candle"></div>
+  <div class="candle" aria-hidden="true"></div>
   <footer>
     <p>© 2024 Dark Academia Chronicles | All Rights Reserved</p>
   </footer>
@@ -176,10 +337,56 @@
     let currentIndex = 0;
 
     setInterval(() => {
-      quotes[currentIndex].style.opacity = '0';
+      quotes.forEach((quote, index) => {
+        quote.style.opacity = '0';
+      });
       currentIndex = (currentIndex + 1) % quotes.length;
       quotes[currentIndex].style.opacity = '1';
-    }, 4000);
+    }, 8000);
+
+    // Page Transition Effect
+    function pageTransition() {
+      const transition = document.getElementById('pageTransition');
+      transition.classList.add('active');
+      setTimeout(() => {
+        transition.classList.remove('active');
+      }, 1000);
+    }
+
+    // Background Music Toggle
+    let isMusicPlaying = false;
+    const music = document.getElementById('backgroundMusic');
+    function toggleMusic() {
+      if (isMusicPlaying) {
+        music.pause();
+      } else {
+        music.play();
+      }
+      isMusicPlaying = !isMusicPlaying;
+    }
+
+    // Generate Floating Particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = Math.random() * 100 + 'vw';
+        particle.style.width = particle.style.height = Math.random() * 5 + 2 + 'px';
+        particle.style.animationDelay = Math.random() * 10 + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+    createParticles();
+
+    // Accessibility for Navigation
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+          pageTransition();
+        }
+      });
+    });
   </script>
 </body>
 </html>
